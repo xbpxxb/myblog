@@ -1,0 +1,37 @@
+<%- include('components/header') %>
+<div class="panel panel-default">
+    <div class="panel-body">
+      <div id="show_err"></div>
+       <ul>
+           <li>
+                用户名
+                <input type="text" id="username" class="form-control" aria-label="..." placeholder="请输入用户名"/>
+            </li>
+            <li>
+                密码
+                <input type="password" id="userpsw" class="form-control" aria-label="..." placeholder="请输入密码" />
+            </li>
+       </ul>
+       <button type="button" class="btn" id="login">登录</button>
+    </div>
+</div>
+<%- include('components/footer') %>
+<script>
+    $("#login").click(function(){
+      var username = $('#username').val();
+      var userpsw = $('#userpsw').val();
+        $.ajax({
+            type: "post",
+            url: "api/signin",
+            data: {username, userpsw},
+            dataType: "json",
+            success: function(result){
+             if(result.code!=0){
+               $("#show_err").text(result.message).css('color','red')
+             }else{
+                window.location.href = '/posts'
+             }
+          }
+        });
+    })
+</script>

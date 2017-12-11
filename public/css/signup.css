@@ -1,0 +1,12 @@
+.panel select{
+    display: block;
+    width: 100%;
+    height: 34px;
+    border: 1px solid #ccc;
+    border-radius: 4px
+}
+.panel textarea{
+    display: block;
+    width: 100%;
+    height: 100px;
+}
