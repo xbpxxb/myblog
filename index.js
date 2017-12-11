@@ -59,7 +59,7 @@ app.use(function (req, res, next) {
 routes(app)
 
 //监听http请求
-const port = process.env.PORT || config.port
+const port = process.env.PORT || 3000
 mongoose.connect(config.mongodb, function(err) {
   if (err) {
       console.log('数据库连接失败');
