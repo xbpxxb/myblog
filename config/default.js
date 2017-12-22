@@ -6,5 +6,5 @@ module.exports = {
       maxAge: 2592000000
     },
     test:'test',
-    mongodb: 'mongodb://xbp:xbp@ds033196.mlab.com:33196/blog'
+    mongodb: 'your mongodb'
 }
